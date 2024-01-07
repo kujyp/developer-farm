@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+    {% block title %} bookshorts {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+        <div class="hero">
+            <h1 class="title">bookshorts</h1>
+            <h3 class="subtitle">1분에 책 한 권 읽기</h3>
+        </div>
+
+        <!-- 시작 화면 (intro) -->
+        <div id="intro" class="intro-container">
+            <form method="post" action="/bookinfo" onsubmit="start()">
+                <h1>bookshorts에 오신 것을 환영합니다! 요약하고 싶은 책을 적어주세요.</h1>
+                <div class="input-section">
+                    <label for="title">제목</label>
+                    <input id="title" name="title">
+                </div>
+                <div class="input-section">
+                    <label for="author">저자</label>
+                    <input id="author" name="author">
+                </div>
+                <div class="button-container">
+                    <button type="submit">요약하기</button>
+                </div>
+            </form>
+            </div>
+          <!-- Chat 버튼 눌렀을 때  -->
+    
+        <!-- kakao ad -->
+        <div class="kakao-ad">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-KbdwsZ8O86UWMOWU" data-ad-width="320"
+                data-ad-height="100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+
+        <script>
+
+            // Searh 관련 function
+            function start() {
+                const title = document.getElementById('title').value;
+                const author = document.getElementById('author').value;
+
+                if (title === '') {
+                    alert('책 제목을 적어주세요!');
+                    return;
+                }
+                if (author === '') {
+                    alert('저자의 이름을 적어주세요!');
+                    return;
+                }    
+            }
+        </script>
+    </div>
+    {% endblock %}

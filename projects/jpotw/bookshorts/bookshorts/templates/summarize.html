@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} {{ book_info }} 요약 {% endblock %}
+{% block content %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+      <style>
+         body {
+        background: #007BFF;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #0062E6, #33AEFF);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0062E6, #33AEFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Poppins', sans-serif;
+    }
+        </style>
+    <div id="chat" class="chat-container">
+        <div class="chat-box">
+            <form method="post" action="/summarize">            
+                <div class="chat-message assistant-welcome">
+                <p class="assistant">{{ book_info }}에서의 핵심 내용을 요약하겠습니다:
+                    {{ content }}
+                </p>
+                </div>
+        </div>
+    </div>
+        
+{% endblock %}
