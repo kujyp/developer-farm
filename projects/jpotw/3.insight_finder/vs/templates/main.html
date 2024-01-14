@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}질문 페이지{% endblock %}
+{% block content %}
+    <div class="question-container">
+        <div class="question-form">
+            <form method="POST", action="{{ url_for('main.answer') }}">
+                <div class="input-section">
+                    <label for="question">질문</label>
+                    <input type="str" id="question" name="question" required>
+                </div>
+                <div>
+                    <button type="submit" class="button">질문하기</button>
+                </div>
+            </form>        
+        </div>
+    </div>
+{% endblock %}
